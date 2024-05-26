@@ -1,0 +1,7 @@
+codecarbon==2.3.5
+matplotlib==3.8.4
+pandas==2.2.2
+tqdm==4.66.2
+transformers==4.40.1
+tf-keras==2.16.0
+tensorflow==2.16.1
