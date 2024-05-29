@@ -8,8 +8,6 @@ source ./env/bin/activate
 pip install --upgrade pip
 pip install -r requirements.txt
 
-pip install scipy==1.12
-pip install --upgrade setuptools
-
+ipython kernel install --user --name=env
 
 deactivate

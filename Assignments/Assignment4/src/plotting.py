@@ -8,11 +8,20 @@ import matplotlib.pyplot as plt
 from codecarbon import EmissionsTracker
 
 def load_data():
+    '''
+    This function loads the data, the code will be running on.
+    It returns the data.
+    '''
     filename = os.path.join("out", "labels.csv")
     data = pd.read_csv(filename)
     return data
 
 def plot_emotion_distribution(data):
+    '''
+    This function plots the emotion distribution in each season.
+    It saves the results in the "out" folder
+    '''
+    #create lists over unique seasons and emotion labels in the data
     unique_seasons = data['Season'].unique()
     unique_labels = data['labels'].unique()
 
@@ -30,9 +39,11 @@ def plot_emotion_distribution(data):
     plt.tight_layout()  
     plt.savefig("out/emotion_distribution.png")
 
-    return unique_labels
-
-def plot_relative_frequency(data, unique_labels):
+def plot_relative_frequency(data):
+    '''
+    This function plots the relative frequency of an emotion across all seasons.
+    It saves the results in the "out" folder.
+    '''
     unique_seasons = data['Season'].unique()
     unique_labels = data['labels'].unique()
 
@@ -62,11 +73,11 @@ def main():
     data_emissions = tracker.stop_task()
 
     tracker.start_task("emotion_distribution")
-    unique_labels = plot_emotion_distribution(data)
+    plot_emotion_distribution(data)
     emotion_distribution_emission = tracker.stop_task()
 
     tracker.start_task("relative_frequency")
-    plot_relative_frequency(data, unique_labels)
+    plot_relative_frequency(data)
     relative_frequency_emission = tracker.stop_task()
 
     tracker.stop() 

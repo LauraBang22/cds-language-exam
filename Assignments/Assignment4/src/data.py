@@ -9,18 +9,30 @@ from codecarbon import EmissionsTracker
 from tqdm import tqdm
 
 def load_model():
+    '''
+    This function loads the classifier the code uses on the data.
+    It returns the classifier.
+    '''
     classifier = pipeline("text-classification", 
                         model="j-hartmann/emotion-english-distilroberta-base", 
                         return_all_scores=False)
     return classifier
 
 def load_data():
+    '''
+    This function loads the data, that the code will run on.
+    It returns the data.
+    '''
     filename = os.path.join("in", "Game_of_Thrones_Script.csv")
     data = pd.read_csv(filename)
-    data.dropna(inplace=True)
+    data.dropna(inplace=True) #dropping rows with missing data
     return data
 
 def generate_labels(classifier, data):
+    '''
+    This function generates an emotion label for each row in the data.
+    It returns a list of labels. 
+    '''
     labels = []
     for line in tqdm(data["Sentence"]):
             label = classifier(line)
@@ -28,11 +40,20 @@ def generate_labels(classifier, data):
     return labels
 
 def add_labels(labels, data):
+    '''
+    This function creates a new dataframe that contains two columns.
+    One called season and one with the labels.
+    That is all that is needed for calculating what is needed in the assignment.
+    It returns the new dataframe.
+    '''
     data["labels"] = labels
     simple_data = data.loc[:, ["Season", "labels"]]
     return simple_data
 
 def save_data(simple_data):
+    '''
+    This function saves the new dataframe in the "out" folder.
+    '''
     outpath = os.path.join("out", "labels.csv")
     simple_data.to_csv(outpath)
 

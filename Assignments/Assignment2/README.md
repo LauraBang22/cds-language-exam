@@ -19,11 +19,13 @@ The data I have used in this assignment, is called **Fake News Dataset**. The da
 
 
 ### Reproducebility 
+For this code to work, you need to be placed in the **Assignment2** folder in your terminal.
+
 I have created a ```setup.sh``` file that can be run from the terminal using the code: 
 ```
 bash setup.sh
 ``` 
-When running it you create a virtual environment where you run the accompanying ```requirements.txt```. It also installs the model that is needed in the code.
+When running it you create a virtual environment where you run the accompanying ```requirements.txt```. 
 
 I have for this assignment created three different ```run.sh``` files that can be run from the terminal using the code:
 ```

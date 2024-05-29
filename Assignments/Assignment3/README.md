@@ -21,11 +21,13 @@ I have also created a requirements.txt and a setup.sh file for you to run, for t
 The data I have used in this assignment, is called **57,650 Spotify Songs**. More information about the data can be found  [here](https://www.kaggle.com/datasets/joebeachcapital/57651-spotify-songs). You'll need to download the dataset and unpack it. When you unpack it you have a folder called **archive**, within that folder is a file. That is the file you need to move it to the ```in``` folder in this repository.
 
 ### Reproducebility 
+For this code to work, you need to be placed in the **Assignment3** folder in your terminal.
+
 I have created a ```setup.sh``` file that can be run from the terminal using the code: 
 ```
 bash setup.sh
 ``` 
-When running it you create a virtual environment where you run the accompanying ```requirements.txt```. It also installs the model that is needed in the code.
+When running it you create a virtual environment where you run the accompanying ```requirements.txt```.
 
 To run the code of the script you have to run this in the terminal: 
 ```

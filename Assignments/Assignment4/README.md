@@ -22,11 +22,13 @@ The data I have used in this assignment, is the scripts for all seasons of the T
 The model I have used to train the data is the model called **emotion-english-distilroberta-base** , which you can find more information about [here](https://huggingface.co/j-hartmann/emotion-english-distilroberta-base).
 
 ### Reproducebility 
+For this code to work, you need to be placed in the **Assignment4** folder in your terminal.
+
 I have created a ```setup.sh``` file that can be run from the terminal using the code: 
 ```
 bash setup.sh
 ``` 
-When running it you create a virtual environment where you run the accompanying ```requirements.txt```. It also installs the model that is needed in the code.
+When running it you create a virtual environment where you run the accompanying ```requirements.txt```.
 
 I have for this assignment created two different ```run.sh``` files that can be run from the terminal using the code:
 ```

@@ -5,16 +5,24 @@ import re
 from codecarbon import EmissionsTracker
 
 def load_model():
+    '''
+    This funtion loads the model we'll be using
+    It returns the model
+    '''
     nlp = spacy.load("en_core_web_md")
     return nlp
 
 def data_processing(nlp):
+    '''
+    This function processes the data and calculates the information I want.
+    It saves the results in the out folder.
+    '''
     main_folder_path = ("in/USEcorpus") #the folder that we will be working in
-    sorted_dir = sorted(os.listdir(main_folder_path)) #sorting all the subfolders
+    sorted_dir = sorted(os.listdir(main_folder_path))
 
     for folder in sorted_dir: #creating a "for loop" to reach all the subfolders
         folder_path = os.path.join(main_folder_path, folder) 
-        filenames = sorted(os.listdir(folder_path)) #sorting all the files in the different subfolders
+        filenames = sorted(os.listdir(folder_path)) 
         folder_info = [] #Define a empty list for later use
         
         for filename in filenames: #creating a new "for loop" to reach all the files in the subfolders
@@ -34,7 +42,7 @@ def data_processing(nlp):
             adj_count = 0
             adv_count = 0
             
-            #"for loop", where for each token of the specific POS, then it'll andd one to the counter.        
+            #"for loop", where for each token of the specific POS, then it'll add one to the counter.        
             for token in doc:
                 if token.pos_ == "NOUN":
                     noun_count += 1
@@ -87,7 +95,7 @@ def main():
     tracker = EmissionsTracker(project_name="assignment1",
                         experiment_id="assignment1",
                         output_dir=os.path.join("..", "Assignment5", "emissions"),
-                        output_file="emissions.csv")
+                        output_file="emissions.csv") #defines the emission tracker
     
     tracker.start_task("load_model")
     nlp = load_model()

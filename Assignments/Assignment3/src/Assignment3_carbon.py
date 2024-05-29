@@ -1,4 +1,3 @@
-#Import the relevant data
 import os
 import sys
 sys.path.append("..")
@@ -7,8 +6,11 @@ import pandas as pd
 import argparse
 from codecarbon import EmissionsTracker
 
-#Define my argparse arguments for later use
 def parser():
+    '''
+    This function defines the argparse arguments, that will be usedd later
+    It retuns the variable args.
+    '''
     parser = argparse.ArgumentParser()
     parser.add_argument("--artist",
                         "-a",
@@ -19,40 +21,61 @@ def parser():
     args = parser.parse_args()
     return args
 
-#Load the model we'll be working with
 def load_model():
+    '''
+    This function roads the model used in this code.
+    It returns the model.
+    '''
     model = api.load("glove-wiki-gigaword-50")
     return model
 
-#Load the data we'll be working with
 def load_data():
+    '''
+    This function loads the data
+    It transforms the everything in the "artist" column to lower case.
+    It returns the transformed data.
+    '''
     filename = os.path.join("in", "Spotify Million Song Dataset_exported.csv")
     data = pd.read_csv(filename)
     data["artist"] = data["artist"].str.lower()
     return data
 
-#A function that finds the most similar words, using the model, when given a word
 def most_similar(model, args):
+    '''
+    This function finds the five most similar words to a searchterm given.
+    It returns those words
+    '''
     most_similar_words = model.most_similar(args.search_term, topn = 5)
     words, similarity = zip(*most_similar_words)
     return words
 
-#A function to find only the songs of a given artist
 def select_artist(data, args):
+    '''
+    This function finds the songs of a given artist.
+    It returns those songs.
+    '''
     search_artist = args.artist.lower()
     search_songs = list(data[data["artist"]== search_artist]["text"])
     return search_songs
 
-#A function that looks through all the songs of the particular artist and counts up if it contains one of the words
 def relevant_songs(search_songs, words):
+    '''
+    This function looks through all the songs of a particular artist
+    and counts if it contains one of the five similar words to the choosen searchterms.
+    It returns the number of songs it has counted.
+    '''
     song_counter = 0
     for song in search_songs:
         if any(word in song.split() for word in words): 
             song_counter += 1
     return song_counter
 
-#Calculating the percentage of songs from the artist that contains the words and then prints it
 def percent(song_counter, search_songs, args):
+    '''
+    This function calculates the percentage of songs from the particular artist 
+    that contains the words and the prints it.
+    It also returns the result.
+    '''
     percent = round(song_counter/len(search_songs)*100, 1)
     result = print(percent, "% of", args.artist,"'s songs contain words related to", args.search_term)
     return result
@@ -61,7 +84,7 @@ def main():
     tracker = EmissionsTracker(project_name="assignment3",
                             experiment_id="assignment3",
                             output_dir=os.path.join("..", "Assignment5", "emissions"),
-                            output_file="emissions.csv")
+                            output_file="emissions.csv") #define the emission tracker
 
     tracker.start_task("args")
     args = parser()
