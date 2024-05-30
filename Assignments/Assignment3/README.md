@@ -1,6 +1,6 @@
 # Assignment 3 - Query expansion with word embeddings
 
-### Assignment Discription
+## Assignment Discription
 In this assignment I have solved the following tasks for the given data:
 - Loads the song lyric data
 - Download/load a word embedding model via ```gensim```
@@ -10,17 +10,17 @@ In this assignment I have solved the following tasks for the given data:
 - Print and/or save results in an easy-to-understand way
     - For example, "45% of {ARTIST}'s songs contain words related to {SEARCH TERM}"
 
-### Repository Structure
+## Repository Structure
 In this repository you'll find ttwo subfolders.
 - In ```in``` you'll find the data that is being used in the code.
 - In ```src``` you'll find the scripts of code written to solve the tasks given in the assignment.
 
 I have also created a ```requirements.txt``` and a ```setup.sh``` file for you to run, for the setting up a virtual environment to run the code in. And I  have created ```run.sh``` scripts to run  a possible version of the searchterms.
 
-### Data
+## Data
 The data I have used in this assignment, is called **57,650 Spotify Songs**. It contains the song lyrics to 57,650 songs, and the artist who performs them. More information about the data can be found  [here](https://www.kaggle.com/datasets/joebeachcapital/57651-spotify-songs). You'll need to download the dataset and unpack it. When you unpack it you have a folder called **archive**, within that folder is a file. That is the file you need to move it to the ```in``` folder in this repository.
 
-### Reproducebility 
+## Reproducebility 
 For this code to work, you need to be placed in the **Assignment3** folder in your terminal.
 
 I have created a ```setup.sh``` file that can be run from the terminal using the code: 
@@ -47,7 +47,7 @@ Should you be interested in running the code that includes the CodeCarbon, it ca
 ```
 bash run_carbon.sh
 ```
-### Results
+## Results
 When running this code, you'll get a percentage of songlyrics in the dataset, that contains one of the five most similar words.
 
 Examples of code I have tested myself:

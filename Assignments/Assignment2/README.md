@@ -18,11 +18,11 @@ In this repository you'll find four subfolders.
 
 I have also created a ```requirements.txt``` and a ```setup.sh``` file for you to run, for the setting up a virtual environment to run the code in. And I  have created ```run.sh``` scripts to run the code from.
 
-### Data
+## Data
 The data I have used in this assignment, is called **Fake News Dataset**. It contains a number of newsarticles and whether or not they are real or fake news. The data can be found [here](https://www.kaggle.com/datasets/jillanisofttech/fake-or-real-news). You'll need to download the dataset and unpack it. When you unpack it you have a folder called **archive**, within that folder is a **.csv** file. That is the file you need to move it to the ```in``` folder in this repository.
 
 
-### Reproducebility 
+## Reproducebility 
 For this code to work, you need to be placed in the **Assignment2** folder in your terminal.
 
 I have created a ```setup.sh``` file that can be run from the terminal using the code: 
@@ -39,7 +39,7 @@ bash run_vectorizer.sh
 ```
 Each file opens the virtual environment again, then runs one of the scripts that I have written for this assignment, and finishes off by deactivating the virtual environment. 
 
-### Results
+## Results
 #### Logistic Regression
 When running the logistic regression model on the data, it gives an accuracy of 83% in the classification report. That is very good. However when you look at learning curves of the cross validation, it shows that the curves are quite far apart, which might indicate that there is a problem of the model overfitting. Something that might help fix that problem is if we had more data to train it on. 
 

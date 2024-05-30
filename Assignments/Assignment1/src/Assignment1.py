@@ -95,7 +95,7 @@ def main():
     tracker = EmissionsTracker(project_name="assignment1",
                         experiment_id="assignment1",
                         output_dir=os.path.join("..", "Assignment5", "emissions"),
-                        output_file="emissions.csv") #defines the emission tracker
+                        output_file="emissions1.csv") #defines the emission tracker
     
     tracker.start_task("load_model")
     nlp = load_model()
