@@ -3,9 +3,9 @@
 ### Assignment Discription
 In this assignment I have solved the following tasks:
 - Predict emotion scores for all lines in the data
-- For each season
+- For each season:
     - Plot the distribution of all emotion labels in that season
-- For each emotion label
+- For each emotion label:
     - Plot the relative frequency of each emotion across all seasons
 
 ## Repository Structure
@@ -17,9 +17,9 @@ In this repository you'll find three subfolders.
 I have also created a ```requirements.txt``` and a ```setup.sh``` file for you to run, for the setting up a virtual environment to run the code in. And I  have created ```run.sh``` scripts to run the code from.
 
 ### Data
-The data I have used in this assignment, is the scripts for all seasons of the TV show Game of Thrones, which can be found [here](https://www.kaggle.com/datasets/albenft/game-of-thrones-script-all-seasons).  You'll need to download it into the ```in``` folder in this repository. You'll need to download the dataset and unpack it. When you unpack it you have a folder called **archive**, within that folder is a file. That is the file you need to move it to the ```in``` folder in this repository.
+The data I have used in this assignment, is the scripts for all seasons of the TV show Game of Thrones, which can be found [here](https://www.kaggle.com/datasets/albenft/game-of-thrones-script-all-seasons). You'll need to download the dataset and unpack it. When you unpack it you have a folder called **archive**, within that folder is a file. That is the file you need to move it to the ```in``` folder in this repository.
 
-The model I have used to train the data is the model called **emotion-english-distilroberta-base** , which you can find more information about [here](https://huggingface.co/j-hartmann/emotion-english-distilroberta-base).
+The model I have used in the code is the model called **emotion-english-distilroberta-base** , which you can find more information about [here](https://huggingface.co/j-hartmann/emotion-english-distilroberta-base). The model can be used to classify the emotion of text.
 
 ### Reproducebility 
 For this code to work, you need to be placed in the **Assignment4** folder in your terminal.

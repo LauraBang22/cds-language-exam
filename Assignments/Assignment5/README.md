@@ -15,7 +15,7 @@ In this repository you'll find three subfolders:
 
 For this assignment I have created a jupyter notebook, where  I have written my code. I have done that, instead of writing a script, because I found that it made more sense to have the code, the resulting plots and my discussion of it all gathered in one place.
 
-I have also created a requirements.txt and a setup.sh file for you to run, for the setting up a virtual enviroment to run the code in.
+I have also created a ```requirements.txt``` and a ```setup.sh``` file for you to run, for the setting up a virtual environment to run the code in.
 
 ### Data
 The data I have worked with in this assignment, is estimations of emission of CO₂eq in my other assignments. It has been generated using **CodeCarbon**, which you can read more about [here](https://codecarbon.io/). 
@@ -29,7 +29,7 @@ bash setup.sh
 ``` 
 When running it you create a virtual environment where you run the accompanying ```requirements.txt```.
 
-To open the created virtual environment for the jupyter notebook, you need to first open the notebook. In the top right corner there is a button, with the text "select kernel". You need to press that. A pop-up will apear, where you need to press "Jupyter kernel...". To find the right kernel, you then first need to press the reload button for the  pop-up, and the you should be able to select the kernel called **"env (Python 3.12.3)"**
+To open the created virtual environment for the jupyter notebook, you need to first open the notebook. In the top right corner there is a button, with the text "select kernel". You need to press that. A pop-up will apear, where you need to press "Jupyter kernel...". To find the right kernel, you first need to press the reload button for the pop-up, and the you should be able to select the kernel called **"env (Python 3.12.3)"**
 
 ### Results
 Overall it is assignment 4 that emits the most CO₂eq. But the common theme is that though out the assignments it is the tasks, that either handles large datasets or big models that generates much emission. It especially when the models are being used on the data, which requires a lot of calculations, that it creates much emission.

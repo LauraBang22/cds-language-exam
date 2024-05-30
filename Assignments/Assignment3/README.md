@@ -3,8 +3,8 @@
 ### Assignment Discription
 In this assignment I have solved the following tasks for the given data:
 - Loads the song lyric data
-- Downloads/loads a word embedding model via ```gensim``` (see below)
-- Takes a given word as an input and finds the most similar words via word embeddings
+- Download/load a word embedding model via ```gensim```
+- Take a given word as an input and finds the most similar words via word embeddings
 - Find how many songs for a given artist feature terms from the expanded query
 - Calculate the percentage of that artist's songs featuring those terms
 - Print and/or save results in an easy-to-understand way
@@ -15,10 +15,10 @@ In this repository you'll find ttwo subfolders.
 - In ```in``` you'll find the data that is being used in the code.
 - In ```src``` you'll find the scripts of code written to solve the tasks given in the assignment.
 
-I have also created a requirements.txt and a setup.sh file for you to run, for the setting up a virtual enviroment to run the code in.
+I have also created a ```requirements.txt``` and a ```setup.sh``` file for you to run, for the setting up a virtual environment to run the code in. And I  have created ```run.sh``` scripts to run  a possible version of the searchterms.
 
 ### Data
-The data I have used in this assignment, is called **57,650 Spotify Songs**. More information about the data can be found  [here](https://www.kaggle.com/datasets/joebeachcapital/57651-spotify-songs). You'll need to download the dataset and unpack it. When you unpack it you have a folder called **archive**, within that folder is a file. That is the file you need to move it to the ```in``` folder in this repository.
+The data I have used in this assignment, is called **57,650 Spotify Songs**. It contains the song lyrics to 57,650 songs, and the artist who performs them. More information about the data can be found  [here](https://www.kaggle.com/datasets/joebeachcapital/57651-spotify-songs). You'll need to download the dataset and unpack it. When you unpack it you have a folder called **archive**, within that folder is a file. That is the file you need to move it to the ```in``` folder in this repository.
 
 ### Reproducebility 
 For this code to work, you need to be placed in the **Assignment3** folder in your terminal.
@@ -41,14 +41,14 @@ bash run_clean.sh
 ```
 The ```run.sh``` opens the virtual environment again and contians code seaching for a specific artist and searchterm, that have been tested and works, and then deactivates the virtual environment again.
 
-I have created two scrips for this assignment, where one of them includes running CodeCarbon on the code. For testing the code I have used the version of the script that does not include CodeCarbon, otherwise the results of the  actual code can get a little lost in everything it returns regarding CodeCarbon.
+I have created two scrips for this assignment, where one of them includes running CodeCarbon on the code. For testing the code I have used the version of the script that does not include CodeCarbon, otherwise the results of the actual code can get a little lost in everything it returns regarding CodeCarbon.
 
 Should you be interested in running the code that includes the CodeCarbon, it can be done from the terminal like this:
 ```
 bash run_carbon.sh
 ```
 ### Results
-When running this code, you'll get a percentage of songlyrics in the dataset, that contains the word or one of the five most similar words.
+When running this code, you'll get a percentage of songlyrics in the dataset, that contains one of the five most similar words.
 
 Examples of code I have tested myself:
 - ```python src/Assignment3.py --artist "The Beatles" --search_term "love"```
